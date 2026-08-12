@@ -14,29 +14,29 @@ NAME			= push_swap
 
 BONUS			= checker
 
-SRC				= list_handler.c\
-				  list_handler_aux.c\
-				  parsing.c\
-				  normalization.c\
-				  rotations.c\
-				  turkish_sort.c\
-				  turkish_sort_aux.c\
-				  push_swap.c\
-				  radix_sort.c\
-				  quick_sort.c\
-				  aux.c\
+SRC				= src/list_handler.c\
+				  src/list_handler_aux.c\
+				  src/parsing.c\
+				  src/normalization.c\
+				  src/rotations.c\
+				  src/turkish_sort.c\
+				  src/turkish_sort_aux.c\
+				  src/push_swap.c\
+				  src/radix_sort.c\
+				  src/quick_sort.c\
+				  src/aux.c\
 
-BONUS_SRC		= checker.c\
-				  list_handler_aux.c\
-				  list_handler.c\
-				  parsing.c\
-				  normalization.c\
-				  rotations.c\
-				  turkish_sort.c\
-				  turkish_sort_aux.c\
-				  radix_sort.c\
-				  quick_sort.c\
-				  aux.c\
+BONUS_SRC		= src/checker.c\
+				  src/list_handler_aux.c\
+				  src/list_handler.c\
+				  src/parsing.c\
+				  src/normalization.c\
+				  src/rotations.c\
+				  src/turkish_sort.c\
+				  src/turkish_sort_aux.c\
+				  src/radix_sort.c\
+				  src/quick_sort.c\
+				  src/aux.c\
 
 OBJ				= $(SRC:.c=.o)
 
@@ -60,7 +60,7 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(LIBFT) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I libft/include -c $< -o $@
+	$(CC) $(CFLAGS) -I. -I libft/include -c $< -o $@
 
 bonus: $(BONUS)
 
